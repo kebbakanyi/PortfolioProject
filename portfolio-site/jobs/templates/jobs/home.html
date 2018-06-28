@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+{% load staticfiles %}
 
 <head>
     <meta charset="utf-8">
@@ -27,9 +28,8 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
                     <a class="nav-item nav-link" href="#">Twitter</a>
-                    <a class="nav-item nav-link" href="#">LinkedIn</a>
-
-                    <a class="nav-item nav-link" href="#">Resume</a>
+                    <a class="nav-item nav-link" href="https://www.linkedin.com/in/kebba-kanyi/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+                    <a class="nav-item nav-link" href=" {% static 'KebbaKanyiResume.pdf' %}">Resume</a>
                     <a class="nav-item nav-link" href="#">Blog</a>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                     {% for job in jobs.all%}
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="{{ job.image.url }}"/>
+                            <img class="card-img-top" src="{{ job.image.url }}" />
                             <div class="card-body">
                                 <p class="card-text">{{ job.summary }}</p>
                             </div>
